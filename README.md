@@ -12,4 +12,6 @@ npm install
 npm run dev
 ```
 
+
+
 [Checkout the course!](https://vueschool.io/courses/application-monitoring-in-vue-js-with-sentry)
