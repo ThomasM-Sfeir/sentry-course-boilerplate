@@ -11,6 +11,7 @@ Sentry.init({
     dsn: "https://a7425bea0c1e50f7ccfa30f4b06fc8dc@o4506738748948480.ingest.sentry.io/4506738802688000",
     logErrors: true,
     release: __SENTRY_RELEASE__,
+    environment: import.meta.env.MODE,
     integrations: [
         Sentry.browserTracingIntegration(),
         Sentry.replayIntegration({
@@ -28,3 +29,9 @@ Sentry.init({
 });
 
 app.use(router).mount('#app')
+
+const user = {
+    email: "moreau.t@sfeir.com"
+}
+Sentry.setUser(user)
+Sentry.configureScope((scope) => scope.setUser(null))
